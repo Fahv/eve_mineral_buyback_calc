@@ -1,3 +1,5 @@
 <?php
-echo "done";
+include_once("src/database_config.php");
+
+
 ?>
