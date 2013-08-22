@@ -1,0 +1,51 @@
+<html>
+<head>
+	<style>
+		table, th, td{
+		border: 1px solid black;
+	}
+	td{
+		text-align:center;
+	}
+	</style>
+</head>
+<body>
+	<table>
+		<form method='post' action='calcore.php'>
+		<tr>
+			<th></th>
+			<th>Veldspar</th>
+			<th>Scordite</th>
+			<th>Omber</th>
+			<th>Jaspet</th>
+			<th>Hemorphite</th>
+		</tr>
+		<tr>
+			<th>0%</th>
+			<td><input type='number' min='0' max='10000' value='0' name='veld1'></input></td>
+			<td><input type='number' min='0' max='10000' value='0' name='scor1'></input></td>
+			<td><input type='number' min='0' max='10000' value='0' name='omb1'></input></td>
+			<td><input type='number' min='0' max='10000' value='0' name='jasp1'></input></td>
+			<td><input type='number' min='0' max='10000' value='0' name='hemo1'></input></td>	
+		</tr>
+		<tr>
+			<th>5%</th>
+			<td><input type='number' min='0' max='10000' value='0' name='veld2'></input></td>
+			<td><input type='number' min='0' max='10000' value='0' name='scor2'></input></td>
+			<td><input type='number' min='0' max='10000' value='0' name='omb2'></input></td>
+			<td><input type='number' min='0' max='10000' value='0' name='jasp2'></input></td>
+			<td><input type='number' min='0' max='10000' value='0' name='hemo2'></input></td>	
+		</tr>
+		<tr>
+			<th>15%</th>
+			<td><input type='number' min='0' max='10000' value='0' name='veld3'></input></td>
+			<td><input type='number' min='0' max='10000' value='0' name='scor3'></input></td>
+			<td><input type='number' min='0' max='10000' value='0' name='omb3'></input></td>
+			<td><input type='number' min='0' max='10000' value='0' name='jasp3'></input></td>
+			<td><input type='number' min='0' max='10000' value='0' name='hemo3'></input></td>	
+		</tr>
+		<tr><td colspan='6'><input type='submit' value="Calculate Cost"/></td></tr>
+		</form>
+	</table>		
+</body>
+</html>
