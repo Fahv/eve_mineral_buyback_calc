@@ -1,6 +1,6 @@
 <?php
-
 class database{
+	
 	private $databaseHost;
 	private $databaseUser;
 	private $databasePass;
@@ -8,21 +8,55 @@ class database{
 	
 	public function __construct() {
        @set_exception_handler(array($this, 'exception_handler'));
-       //throw new Exception('DOH!!');
-   }
+       $this->dbo = null;
+	}
 	
-	public function load($host,$name,$pass,$persistent){
-		//@set_exception_handler(array(this,'exception_handler'));
-		//throw new Exception('DOH!!');
-		$databaseHost = $host;
-		$databaseName = $name;
-		$databasePass = $pass;
+	public function loadDB($type,$host,$dbname,$name,$pass,$persistent){
+		$this->databaseHost = $type.":host=".$host.";dbname=".$dbname;
+		$this->databaseUserName = $name;
+		$this->databasePass = $pass;
 		
-		$dbo = new PDO($host,$name,$pass,array(
+		$this->dbo = new PDO($this->databaseHost,$this->databaseUserName,$this->databasePass,array(
 			PDO::ATTR_PERSISTENT => $persistent
 			));
+	}
+	
+	public function InitDB(){
+		$sql = 'CREATE TABLE IF NOT EXISTS table_Mineral ( 
+		Tri DECIMAL(10,2), 
+		Prye DECIMAL(10,2), 
+		Mex DECIMAL(10,2), 
+		Iso DECIMAL(10,2), 
+		Noc DECIMAL(10,2), 
+		Zyd DECIMAL(10,2), 
+		Meg DECIMAL(10,2), 
+		Mor DECIMAL(10,2));';
 		
-		echo "test";
+			
+		//echo $this->dbo;	
+				
+		$this->dbo->exec($sql);
+		
+		//echo "Created table with ".$count;
+		
+	}
+		
+	public function updateTable($table,$column,$columnValue,$where,$whereValue){
+		$sql = 'UPDATE '.$table.' 
+			SET '.$column.'='.$columnValue.'
+			WHERE '.$where.'='.$whereValue.';';
+			
+		$stmt = $this->dbo->prepare($sql);
+		$stmt->execute();
+	}
+	
+	public function insertInto($table,$column,$columnValue,){
+		$sql = 'UPDATE '.$table.' 
+			SET '.$column.'='.$columnValue.'
+			WHERE '.$where.'='.$whereValue.';';
+			
+		$stmt = $this->dbo->prepare($sql);
+		$stmt->execute();
 	}
 									 
 	public function exception_handler($exception){
@@ -30,5 +64,9 @@ class database{
 		die();
 	}
 	
+	
+	public function closeConnection(){
+		$this->dbo = null;
+	}
 }
 ?>
