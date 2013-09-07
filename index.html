@@ -1,6 +1,9 @@
 <html>
 <head>
 	<style>
+		table{
+			float:left;
+		}
 		table, th, td{
 		border: 1px solid black;
 	}
@@ -12,40 +15,99 @@
 <body>
 	<table>
 		<form method='post' action='calcore.php'>
-		<tr>
-			<th></th>
-			<th>Veldspar</th>
-			<th>Scordite</th>
-			<th>Omber</th>
-			<th>Jaspet</th>
-			<th>Hemorphite</th>
-		</tr>
-		<tr>
-			<th>0%</th>
-			<td><input type='number' min='0' max='10000' value='0' name='veld1'></input></td>
-			<td><input type='number' min='0' max='10000' value='0' name='scor1'></input></td>
-			<td><input type='number' min='0' max='10000' value='0' name='omb1'></input></td>
-			<td><input type='number' min='0' max='10000' value='0' name='jasp1'></input></td>
-			<td><input type='number' min='0' max='10000' value='0' name='hemo1'></input></td>	
-		</tr>
-		<tr>
-			<th>5%</th>
-			<td><input type='number' min='0' max='10000' value='0' name='veld2'></input></td>
-			<td><input type='number' min='0' max='10000' value='0' name='scor2'></input></td>
-			<td><input type='number' min='0' max='10000' value='0' name='omb2'></input></td>
-			<td><input type='number' min='0' max='10000' value='0' name='jasp2'></input></td>
-			<td><input type='number' min='0' max='10000' value='0' name='hemo2'></input></td>	
-		</tr>
-		<tr>
-			<th>15%</th>
-			<td><input type='number' min='0' max='10000' value='0' name='veld3'></input></td>
-			<td><input type='number' min='0' max='10000' value='0' name='scor3'></input></td>
-			<td><input type='number' min='0' max='10000' value='0' name='omb3'></input></td>
-			<td><input type='number' min='0' max='10000' value='0' name='jasp3'></input></td>
-			<td><input type='number' min='0' max='10000' value='0' name='hemo3'></input></td>	
-		</tr>
-		<tr><td colspan='6'><input type='submit' value="Calculate Cost"/></td></tr>
+		<tr><th>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Amount</th>
+				<th>Name</th>
+				<th>Amount</th>
+				<th>Name</th>
+				<th>Amount</th>
+			</tr>
+			<tr>
+				<td>Veldspar</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='veld1'></input></td>
+				<td>Concentrated Veldspar</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='veld2'></input></td>
+				<td>Dense Veldspar</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='veld3'></input></td>
+			</tr>
+			<tr>
+				<td>Scordite</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='scor1'></input></td>
+				<td>Condensed Scordite</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='scor2'></input></td>
+				<td>Massive Scordite</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='scor3'></input></td>
+			</tr>
+			<tr>
+				<td>Omber</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='omb1'></input></td>
+				<td>Silvery Omber</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='omb2'></input></td>
+				<td>Golden Omber</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='omb3'></input></td>
+			</tr>
+			<tr>
+				<td>Jaspet</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='jasp1'></input></td>
+				<td>Pure Jaspet</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='jasp2'></input></td>
+				<td>Pristine Jaspet</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='jasp3'></input></td>
+			</tr>
+			<tr>
+				<td>Hemorphite</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='hemo1'></input></td>
+				<td>Vivid Hemorphite</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='hemo2'></input></td>
+				<td>Radiant Hemorphite</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='hemo3'></input></td>
+			</tr>
+			</table>
+			</th><th>
+			<table>
+			<tr>
+				<th>Name</th>
+				<th>Amount</th>
+			</tr>
+			<tr>
+				<td>Trit</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='trit'></input></td>
+			</tr>
+			<tr>
+				<td>Pye</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='pye'></input></td>
+			</tr>
+			<tr>
+				<td>Mex</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='mex'></input></td>
+			</tr>
+			<tr>
+				<td>Iso</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='iso'></input></td>
+			</tr>
+			<tr>
+				<td>Noc</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='noc'></input></td>
+			</tr>
+			<tr>
+				<td>Zyd</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='zyd'></input></td>
+			</tr>
+			<tr>
+				<td>Meg</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='meg'></input></td>
+			</tr>
+			<tr>
+				<td>Mor</td>
+				<td><input type='number' min='0' max='100000000' value='0' name='mor'></input></td>
+			</tr>
+			</table>
+			</th></tr>
+			<tr><th colspan="2"><input type='submit' value="Calculate Cost"/></th></tr>
 		</form>
-	</table>		
+		</table>
 </body>
 </html>

@@ -20,9 +20,28 @@ $mineral_prices_file->init($_SERVER['DOCUMENT_ROOT']."/eve/mineralPrices.txt",MO
  $your_array = explode("\n", $mineral_prices_file->getContent());
  
  echo "<pre>";
- var_dump($your_array);
+ //var_dump($your_array);
  echo "</pre>";
  
+ $time = $your_array[0];
+ $trit= $your_array[1];
+ $pye= $your_array[2];
+ $mex= $your_array[3];
+ $iso= $your_array[4];
+ $noc= $your_array[5];
+ $zyd= $your_array[6];
+ $meg= $your_array[7];
+ $mor= $your_array[8];
+ echo "Last update: $time <br />
+ Trit Price: $trit<br />
+ Pye Price: $pye<br />
+ Mex Price: $mex<br />
+ Iso Price: $iso<br />
+ Noc Price: $noc<br />
+ Zyd Price: $zyd<br />
+ Meg Price: $meg<br />
+ Mor Price: $mor<br />";
  
-
+ 
+echo "Current time : ".date("Y-m-dT");
 ?>
