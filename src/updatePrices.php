@@ -20,7 +20,7 @@ $json = json_decode($json_pull_url->getContent(),true);
 //echo "</pre>";
 $a = array();
 $i =0;
-$currentTime = $json['emd']['currentTime'];
+$currentTime = time();
 
 
 foreach($json['emd']['result'] as $result){
